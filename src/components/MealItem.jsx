@@ -15,7 +15,7 @@ export default function MealItem({ meal }) {
     <li className="meal-item">
       <article>
         <img
-          src={`http://localhost:3000/${meal.image}`}
+          src={`https://funmeal-api.onrender.com/${meal.image}`}
           alt={meal.name}
         />
         <div>
