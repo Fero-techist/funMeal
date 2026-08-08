@@ -1,10 +1,10 @@
 import { useContext, useActionState } from "react";
 
-import Modal from "./UI/Modal.jsx";
+import Modal from "./ui/Modal.jsx";
 import CartContext from "../store/CartContext.jsx";
 import { currencyFormatter } from "../utils/formatting.jsx";
-import Input from "./UI/Input.jsx";
-import Button from "./UI/Button.jsx";
+import Input from "./ui/Input.jsx";
+import Button from "./ui/Button.jsx";
 import UserProgressContext from "../store/UserProgressContext.jsx";
 import useHttp from "../hooks/useHttp.js";
 import Error from "./Error.jsx";
