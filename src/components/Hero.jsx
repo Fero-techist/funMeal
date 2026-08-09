@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import foodHero from "../assets/food.jpg";
+import CartContext from "../store/CartContext.jsx";
+import UserProgressContext from "../store/UserProgressContext.jsx";
 
 const Hero = () => {
+  const cartCtx = useContext(CartContext);
+  const userProgressCtx = useContext(UserProgressContext);
+
+  function scrollToMenu() {
+    const menuSection = document.getElementById("meals");
+    if (menuSection) {
+      menuSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function handleOrderNow() {
+    if (cartCtx.items.length > 0) {
+      userProgressCtx.showCart();
+      return;
+    }
+
+    scrollToMenu();
+  }
+
+  function handleBrowseMenu() {
+    scrollToMenu();
+  }
+
   return (
     <section className="relative overflow-hidden bg-[#29251d] text-white hero-section">
       {/* Bottom curved shape */}
@@ -29,12 +54,20 @@ const Hero = () => {
 
             {/* Buttons */}
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:justify-start">
-              <button className="flex w-full items-center justify-center gap-2 rounded-full bg-[#f6b900] px-5 py-2.5 text-[10px] font-bold text-[#1b170f] shadow-[0_5px_20px_rgba(246,185,0,0.15)] transition hover:bg-[#ffc51c] sm:w-auto">
-                <span className="text-xs">🛒</span>
+              <button
+                type="button"
+                onClick={handleOrderNow}
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-[#f6b900] px-5 py-3 text-[11px] font-bold text-[#1b170f] shadow-[0_8px_30px_rgba(246,185,0,0.18)] transition hover:bg-[#ffc51c] sm:w-auto"
+              >
+                <span className="text-sm">🛒</span>
                 Order Now
               </button>
 
-              <button className="w-full rounded-full border border-[#aaa49a] px-5 py-2.5 text-[10px] font-semibold text-white transition hover:border-white hover:bg-white/5 sm:w-auto">
+              <button
+                type="button"
+                onClick={handleBrowseMenu}
+                className="w-full rounded-full border border-[#aaa49a] bg-white/5 px-5 py-3 text-[11px] font-semibold text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
+              >
                 Browse Menu
               </button>
             </div>

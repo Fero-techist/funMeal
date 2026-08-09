@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Button from "./ui/Button.jsx";
 import logoImg from "../assets/logo.jpg";
 import CartContext from "../store/CartContext.jsx";
@@ -7,10 +7,26 @@ import UserProgressContext from "../store/UserProgressContext.jsx";
 export default function Header() {
   const cartCtx = useContext(CartContext);
   const userProgressCtx = useContext(UserProgressContext);
+  const [bump, setBump] = useState(false);
+  const previousCount = useRef(0);
 
   const totalCartItems = cartCtx.items.reduce((totalNumberOfItems, item) => {
     return totalNumberOfItems + item.quantity;
   }, 0);
+
+  useEffect(() => {
+    if (previousCount.current === totalCartItems) {
+      return;
+    }
+
+    if (totalCartItems > 0) {
+      setBump(true);
+      const timer = window.setTimeout(() => setBump(false), 300);
+      return () => window.clearTimeout(timer);
+    }
+
+    previousCount.current = totalCartItems;
+  }, [totalCartItems]);
 
   function handleShowCart() {
     userProgressCtx.showCart();
@@ -62,10 +78,13 @@ export default function Header() {
 
       <Button
         textOnly
-        className="text-sm"
+        className={`text-sm cart-button${bump ? " bump" : ""}`}
         onClick={handleShowCart}
       >
-        Cart ({totalCartItems})
+        <span>Cart</span>
+        <span className={`cart-count${bump ? " bump" : ""}`}>
+          {totalCartItems}
+        </span>
       </Button>
     </header>
   );
