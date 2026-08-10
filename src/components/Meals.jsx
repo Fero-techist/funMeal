@@ -119,7 +119,10 @@ export default function Meals() {
     <section className="menu-section">
       <div className="menu-header">
         <h2>Menu</h2>
-        <p>Filter meals by category to find what you crave faster.</p>
+        <p>
+          Choose from Burger, Pizza, Sushi, Nigerian favourites, and more — all
+          ready to order fast.
+        </p>
       </div>
 
       <div className="menu-filters">

@@ -138,5 +138,26 @@
     "price": "8.99",
     "description": "Crispy falafels wrapped in a warm pita with lettuce, tomatoes, and a tahini sauce.",
     "image": "images/falafel-wrap.jpg"
+  },
+  {
+    "id": "m21",
+    "name": "Jollof Rice",
+    "price": "12.99",
+    "description": "Savory Nigerian jollof rice cooked with tomato, spices, and tender vegetables.",
+    "image": "images/jollof-rice.jpg"
+  },
+  {
+    "id": "m22",
+    "name": "Suya Skewers",
+    "price": "11.99",
+    "description": "Spicy grilled beef skewers seasoned with peanuts, peppers, and smoky suya spices.",
+    "image": "images/suya-skewers.jpg"
+  },
+  {
+    "id": "m23",
+    "name": "Egusi Soup",
+    "price": "13.99",
+    "description": "Rich egusi stew simmered with melon seeds, greens, and tender pieces of meat.",
+    "image": "images/egusi-soup.jpg"
   }
 ]

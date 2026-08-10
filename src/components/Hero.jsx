@@ -48,8 +48,8 @@ const Hero = () => {
 
             <p className="mt-5 mx-auto max-w-[470px] text-[13px] leading-[1.65] text-[#aaa49a]">
               Discover handcrafted meals prepared with fresh ingredients and
-              delivered fast. Whether you're craving pizza, pasta, burgers, or
-              healthy salads, we've got something you'll love.
+              delivered fast. Whether you're craving pizza, sushi, burgers, or
+              bold Nigerian flavours, we've got something you'll love.
             </p>
 
             {/* Buttons */}

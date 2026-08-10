@@ -3,6 +3,7 @@ import Hero from "./components/Hero.jsx";
 import Meals from "./components/Meals.jsx";
 import Cart from "./components/Cart.jsx";
 import Checkout from "./components/Checkout.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 import { CartContextProvider } from "./store/CartContext.jsx";
 import { UserProgressContextProvider } from "./store/UserProgressContext.jsx";
 
@@ -16,6 +17,7 @@ function App() {
           <Meals />
           <Cart />
           <Checkout />
+          <ScrollToTop />
         </div>
       </UserProgressContextProvider>
     </CartContextProvider>

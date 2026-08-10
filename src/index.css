@@ -410,6 +410,30 @@ h1 {
   box-shadow: 0 14px 20px rgba(255, 216, 3, 0.35);
 }
 
+.scroll-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #ffd803, #ffb500);
+  color: #1d1a16;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 50;
+}
+
+.scroll-to-top:hover,
+.scroll-to-top:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.3);
+}
+
 .text-button:hover,
 .text-button:active {
   color: #ffab04;
